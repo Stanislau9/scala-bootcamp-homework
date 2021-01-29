@@ -8,8 +8,8 @@ object basics {
   @tailrec
   def gcd(a: Int, b: Int): Option[Int] = (abs(a), abs(b)) match {
     case (0, 0) => None
-    case (0, _)             => Some(abs(b))
-    case (_, 0)             => Some(abs(a))
+    case (0, ba)             => Some(ba)
+    case (aa, 0)             => Some(aa)
     case (aa, ba) if a > b  => gcd(ba, aa % ba)
     case (aa, ba)           => gcd(aa, ba % aa)
   }
